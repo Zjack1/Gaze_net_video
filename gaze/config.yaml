@@ -1,0 +1,27 @@
+---
+train:
+  params:
+    batch_size: 32
+    epoch: 60
+    lr: 0.00001
+    decay: 0.1
+    decay_step: 5000
+    loss: MSELoss
+  save:
+    save_path: "./"
+    model_name: GazeNet
+    step: 6
+  data:
+    image: "../../"
+    label: "../../MPIIGaze/new_data/right_img_label.txt"
+  pretrains: "None"
+test:
+   load:
+      begin_step: 10
+      end_step: 10
+      steps: 10
+      load_path: "./"
+      model_name: GazeNet
+   data:
+      image: "../../"
+      label: "../../MPIIGaze/new_data/test_p14.txt"
